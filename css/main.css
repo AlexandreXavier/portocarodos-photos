@@ -1,0 +1,136 @@
+header {
+  justify-content: flex-end !important;
+}
+
+.albums-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 15px;
+  max-width: 950px;
+  margin: auto;
+}
+
+.album {
+  position: relative;
+  margin-right: 20px;
+  margin-bottom: 35px;
+  text-decoration: none;
+}
+
+.album .dropdown-btn {
+  opacity: 0;
+  position: absolute;
+  z-index: 3;
+  top: 5px;
+  right: 5px;
+  width: 22px;
+  height: 21px;
+  background: rgba(255,255,255,.7);
+  text-align: center;
+  font-size: 25px;
+  color: rgba(0,0,0,.7);
+  border: 1px solid rgba(0,0,0,.075);
+  border-radius: 3px;
+  line-height: 15px;
+  vertical-align: middle;
+}
+
+.album:hover .dropdown-btn {
+  opacity: 1;
+}
+
+.album:hover .dropdown-btn:hover {
+  color: #000;
+}
+
+.album img,
+.album div.placeholder {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+}
+
+.album img {
+  object-fit: cover;
+}
+
+.album div.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.album.create-album div.placeholder {
+  border: 2px dashed rgba(0,0,0,.15);
+  color: #009688;
+  font-size: 48px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.album.create-album div.placeholder:hover {
+  background: rgba(0,0,0,.025);
+}
+
+.album.empty div.placeholder {
+  background: rgba(0,0,0, .05);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(0,0,0,.45);
+}
+
+.album .title,
+.album .photo-count {
+  font-size: 12px;
+}
+
+.album .title {
+  font-weight: 500;
+  margin-bottom: 3px;
+  color: #333;
+}
+
+.album .photo-count {
+  color: rgba(0,0,0,0.54);
+  font-weight: 300;
+}
+
+.actions {
+  display: block;
+  margin-bottom: 1em;
+}
+
+#prompt {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.5);
+  z-index: 3;
+  font-size: 14px;
+}
+
+#prompt .content {
+  width: 400px;
+  border-radius: 5px;
+  background: #fff;
+  border: 2px solid #009688;
+  margin: auto;
+  margin-top: 100px;
+  padding: 20px;
+}
+
+#prompt .content p {
+  margin-top: 0;
+}
+
+#prompt .content .btn {
+  margin-left: 0;
+  margin-top: 10px;
+}
+
+#prompt:empty {
+  display: none;
+}
