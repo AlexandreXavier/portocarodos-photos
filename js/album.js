@@ -36,6 +36,8 @@
 
     document.querySelector('h1').innerHTML = archiveInfo.title || '<em>Untitled</em>'
     document.querySelector('.desc').innerText = archiveInfo.description || ''
+    document.querySelector('.peers').innerText = archiveInfo.peers|| ''
+   
 
     // set value of hidden textarea to album's URL
     urlEl.innerHTML = archive.url
@@ -71,6 +73,8 @@
     else selectedImages.splice(idx, 1)
   }
 
+
+  //delite img
   async function onDeleteSelected () {
     for (let path of selectedImages) {
       const imgTag = document.querySelector(`[src='${path}']`)
@@ -86,17 +90,25 @@
     selectedImages.length = 0
   }
 
-  function onEditInfo () {
-    // TODO
-    // replace the h1 and description with inputs
-
-    // add a save button
-
-    // add an event listener to the save button
+  async function onEditInfo () {
+    for (let path of selectedImages) {
+      const imgSel = document.querySelector(`[src='${path}']`)
+      if (imgSel) {
+        alert("Dentro")
+        var para = document.createElement("p");
+        // var node = document.createTextNode("Caminho "+${path});
+        // para.appendChild(node);
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+      }
+    }
+    // clear selectedImages array
+    selectedImages.length = 0
+    
   }
 
+  
   // renderers
-
   function renderApp () {
     // clear the prompt
     updatePrompt('')
@@ -107,7 +119,7 @@
     })
 
     // TODO
-    // document.getElementById('edit-info').addEventListener('click', onEditInfo)
+    document.getElementById('edit-info').addEventListener('click', onEditInfo)
     document.getElementById('delete-selected').addEventListener('click', onDeleteSelected)
 
     document.querySelector('input[type="file"]').addEventListener('change', function (e) {

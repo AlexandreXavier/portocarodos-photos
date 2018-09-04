@@ -18,6 +18,18 @@ h1 {
   margin-bottom: 0;
 }
 
+.peers {
+  margin-right: 10px;
+  color: rgba(100,100,100,.75);
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.div1 {
+  max-width: 950px;
+  margin: auto;
+}
+
 .container {
   max-width: 950px;
   margin: auto;
@@ -66,7 +78,7 @@ h1 {
 }
 
 .album-images .img-container.selected {
-  border: 10px solid #ff0000;
+  border: 10px solid #00796b;
   transform: scale(.95);
 }
 
